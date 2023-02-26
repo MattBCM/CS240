@@ -1,0 +1,14 @@
+.data
+full_word: .word 
+char1: .byte 'X'
+char2: .byte 'Y'
+char3: .byte 'Z'
+char4: .byte 'x'
+.text
+la $t0,char1
+lh $t1,0($t0)	
+la $t2,full_word
+sw $t1,0($t2)
+la $a0,full_word
+li $v0, 4
+syscall
